@@ -35,7 +35,9 @@ export class InfoComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     const resUser: any = await firstValueFrom(this.http.get(environment.apiAdress + 'user/discord/me', { withCredentials: true }));
+    this.user = resUser.body;
     const getMonsterOwnPrincipal: any = await firstValueFrom(this.http.get(environment.apiAdress + 'user/monsters?isPrincipal=true', { withCredentials: true }));
+    this.monsters = getMonsterOwnPrincipal.body;
     const getAllMonsters: any = await firstValueFrom(this.http.get(environment.apiAdress + 'monsters', { withCredentials: true }));
     getAllMonsters.body.forEach((monster: any) => {
       this.monstersNameAndId.push({ name: `${this.capitalizeFirstLetter(monster.element)} - ${monster.name} (${monster.awekeningName})`, id: monster._id });
@@ -49,9 +51,6 @@ export class InfoComponent implements OnInit {
     });
 
     console.log(this.monstersNameAndId)
-
-    this.user = resUser.body;
-    this.monsters = getMonsterOwnPrincipal.body;
     this.filterOptions(1);
     this.filterOptions(2);
     this.filterOptions(3);
