@@ -14,12 +14,12 @@ const routes: Routes = [
   {
     path: 'user/info',
     component: InfoComponent,
-    canActivate: [authGuard],
+    canActivate: [],
   },
   {
     path: 'monsters',
     component: DashComponent,
-    canActivate: [authGuard],
+    canActivate: [],
   },
   {
     path: '**',
