@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "config": "npx ts-node set-env.ts",
+    "start": "npm run config && ng serve --configuration=custom",
+    "build": "npm run config && ng build --configuration=custom",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -18,7 +19,11 @@
     "@angular/platform-browser": "^16.1.0",
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
+    "bootstrap": "^5.3.1",
+    "discord.js": "^14.12.1",
+    "dotenv": "^16.3.1",
     "rxjs": "~7.8.0",
+    "ts-node": "^10.9.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },

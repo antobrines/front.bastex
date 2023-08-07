@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row vh-100 align-items-center">
+    <div class="col-md-7">
+      <div class="card user-card">
+        <div class="card-block">
+            <ul class="list-inline">
+              <li class="list-inline-item" (click)="changeElement('fire')"><img src="assets/images/elements/Element-Fire.webp"></li>
+              <li class="list-inline-item" (click)="changeElement('water')"><img src="assets/images/elements/Element-Water.webp"></li>
+              <li class="list-inline-item" (click)="changeElement('wind')"><img src="assets/images/elements/Element-Wind.webp"></li>
+              <li class="list-inline-item" (click)="changeElement('dark')"><img src="assets/images/elements/Element-Dark.webp"></li>
+              <li class="list-inline-item" (click)="changeElement('light')"><img src="assets/images/elements/Element-Light.webp"></li>
+            </ul>
+            <div class="row">
+              <p>1*</p>
+              <div class="col-2" *ngFor="let monster of monstersOneStars">
+                <div class="{{monster?.element}}">
+                  <img src="{{ monster?.image }}" alt="{{ monster?.name != 'none' ? ''  : monster?.name }}" title="{{ monster?.name != 'none' ? ''  : monster?.name }}"/>
+                  <p>{{ monster?.name }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <p>2*</p>
+              <div class="col-2" *ngFor="let monster of monstersTwoStars">
+                <div class="{{monster?.element}}">
+                  <img src="{{ monster?.image }}" alt="{{ monster?.name != 'none' ? ''  : monster?.name }}" title="{{ monster?.name != 'none' ? ''  : monster?.name }}"/>
+                  <p>{{ monster?.name }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <p>3*</p>
+              <div class="col-2" *ngFor="let monster of monstersThreeStars">
+                <div class="{{monster?.element}}">
+                  <img src="{{ monster?.image }}" alt="{{ monster?.name != 'none' ? ''  : monster?.name }}" title="{{ monster?.name != 'none' ? ''  : monster?.name }}"/>
+                  <p>{{ monster?.name }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <p>4*</p>
+              <div class="col-2" *ngFor="let monster of monstersFourStars">
+                <div class="{{monster?.element}}">
+                  <img src="{{ monster?.image }}" alt="{{ monster?.name != 'none' ? ''  : monster?.name }}" title="{{ monster?.name != 'none' ? ''  : monster?.name }}"/>
+                  <p>{{ monster?.name }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <p>5*</p>
+              <div class="col-2" *ngFor="let monster of monstersFiveStars">
+                <div class="{{monster?.element}}">
+                  <img src="{{ monster?.image }}" alt="{{ monster?.name != 'none' ? ''  : monster?.name }}" title="{{ monster?.name != 'none' ? ''  : monster?.name }}"/>
+                  <p>{{ monster?.name }}</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-5">
+      <div class="card user-card">
+        <div class="card-block"></div>
+      </div>
+    </div>
+  </div>
+</div>

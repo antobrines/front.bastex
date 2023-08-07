@@ -1,0 +1,155 @@
+<div class="container">
+  <div class="row vh-100 align-items-center">
+    <div class="col-md-4">
+      <div class="card user-card">
+        <div class="card-block">
+          <div class="user-image">
+            <img
+              src="{{ user?.avatar }}"
+              class="img-radius"
+              alt="User-Profile-Image"
+            />
+          </div>
+          <h6 class="f-w-600 m-t-25 m-b-10">{{ user?.username }}</h6>
+          <p class="text-muted">Roles maybe</p>
+          <hr />
+          <p class="text-muted m-t-15">Power : 600000</p>
+
+          <div class="bg-c-blue counter-block m-t-10 p-20">
+            <div class="row">
+              <div class="col-4" *ngFor="let monster of monsters">
+                <img src="{{ monster?.monsterId.image }}" alt=""/>
+                <p>{{monster.power}}</p>
+              </div>
+            </div>
+          </div>
+          <!-- <p class="m-t-15 text-muted">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p> -->
+          <hr />
+          <div class="row justify-content-center user-social-link">
+            <div class="col-auto">
+              <a href="#!"><i class="fa fa-facebook text-facebook"></i></a>
+            </div>
+            <div class="col-auto">
+              <a href="#!"><i class="fa fa-twitter text-twitter"></i></a>
+            </div>
+            <div class="col-auto">
+              <a href="#!"><i class="fa fa-dribbble text-dribbble"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="card user-card">
+        <div class="card-block">
+          <div class="row">
+            <div class="col-6">
+              <label for="invocateur" class="form-label">Invocateur</label>
+              <select class="form-select"  name="invocateur" [(ngModel)]="summonerSelected">
+                <option value="Cleaf">Cleaf</option>
+                <option value="Kina">Kina</option>
+                <option value="Orbia">Orbia</option>
+                <option value="Soleta">Soleta</option>
+              </select>
+            </div>
+            <div class="col-6">
+              <label for="puissance" class="form-label">Puissance</label>
+              <input
+                type="number"
+                class="form-control"
+                placeholder="..."
+                name="puissance"
+                [(ngModel)]="summonerPower"
+              />
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-8">
+              <label for="invocateur" class="form-label">Monstre 1</label>
+              <div class="row ">
+                <div class="col-4">
+                  <input type="text" class="form-control mb-2" [(ngModel)]="searchTerm1" (ngModelChange)="filterOptions(1)" placeholder="Rechercher...">
+                </div>
+                <div class="col">
+                  <select class="form-select" [(ngModel)]="monster1">
+                    <option value="">Sélectionnez une option</option>
+                    <option *ngFor="let option of filteredOptions1" [value]="option.id">{{ option.name }}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <label for="puissance" class="form-label">Puissance</label>
+              <input
+                type="number"
+                class="form-control"
+                placeholder="..."
+                name="puissance"
+                [(ngModel)]="power1"
+              />
+            </div>
+          </div>
+
+          <div class="row mt-2">
+            <div class="col-8">
+              <label for="invocateur" class="form-label">Monstre 2</label>
+              <div class="row ">
+                <div class="col-4">
+                  <input type="text" class="form-control mb-2" [(ngModel)]="searchTerm2" (ngModelChange)="filterOptions(2)" placeholder="Rechercher...">
+                </div>
+                <div class="col">
+                  <select class="form-select" [(ngModel)]="monster2">
+                    <option value="">Sélectionnez une option</option>
+                    <option *ngFor="let option of filteredOptions2" [value]="option.id">{{ option.name }}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <label for="puissance" class="form-label">Puissance</label>
+              <input
+                type="number"
+                class="form-control"
+                placeholder="..."
+                name="puissance"
+                [(ngModel)]="power2"
+              />
+            </div>
+          </div>
+
+          <div class="row mt-2">
+            <div class="col-8">
+              <label for="invocateur" class="form-label">Monstre 3</label>
+              <div class="row ">
+                <div class="col-4">
+                  <input type="text" class="form-control mb-2" [(ngModel)]="searchTerm3" (ngModelChange)="filterOptions(3)" placeholder="Rechercher...">
+                </div>
+                <div class="col">
+                  <select class="form-select" [(ngModel)]="monster3">
+                    <option value="">Sélectionnez une option</option>
+                    <option *ngFor="let option of filteredOptions3" [value]="option.id">{{ option.name }}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <label for="puissance" class="form-label">Puissance</label>
+              <input
+                type="number"
+                class="form-control"
+                placeholder="..."
+                name="puissance"
+                [(ngModel)]="power3"
+              />
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary" (click)="save()">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
